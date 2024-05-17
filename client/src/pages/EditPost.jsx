@@ -15,7 +15,7 @@ const modules ={
     [{'list': 'ordered'},{'list': 'bullet'},{'indent': '-1'}, {'indent': '+1'}],
     ['link','image'],
     ['clean']
-  ], 
+  ],
 }
 const formats = [
   'header',
@@ -24,7 +24,7 @@ const formats = [
   'link','image'
 ]
 const POST_CATEGORIES = ["Agriculture","Business","Education","Entertainment","Art","Investment","Uncategorized","Weather"]
-  
+
 return (
   <section className="container">
     <div className="container">
@@ -39,7 +39,7 @@ return (
           POST_CATEGORIES.map(cat => <option key={cat}>{cat}</option>)
         }
         </select>
-        <ReactQuill modules={modules} formats={formats} value={description} onChange={(e) => setDescription(e.target.value)} />
+        <ReactQuill modules={modules} formats={formats} value={description} onChange={setDescription} />
         <input type="file" onChange={e => setThumbnail(e.target.files[0])} accept='png, jpg, jpeg'/>
         <button type="submit" className='btn primary'>Update</button>
       </form>
